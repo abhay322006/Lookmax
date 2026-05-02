@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="javascripts/shownres.js"></script>
+
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("images/background3.jpeg");
+        
+    }
+    .circle{
+        width: 420px;
+        height: 420px;
+        position: absolute;
+        right: 150px;
+        top: 45%;
+        border-radius: 50%;
+        background: #efefef;
+        border: 2px solid #7dBa9a;
+        box-shadow: inset 0 0 20px rgba(0,0, 0, 0.080);
+        
+    }
+     .text-wrapper{
+        position: absolute;
+        top: 242px;
+        left: 160px;
+        font-family: "Exo 2-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: nowrap;
+    }
+     .div{
+        position: absolute;
+        top: 336px;
+        left: 164px;
+        font-family: "Elms Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 48px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+     .done{
+        top: 443px;
+        position: absolute;
+        left: 160px;
+        width: 55px;
+        aspect-ratio: 1;
+        object-fit: cover;      
+    }
+     .done-2{
+        top: 519px;
+        position: absolute;
+        left: 160px;
+        width: 55px;
+        height: 55px;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+     .done-3{
+        top: 595px;
+        position: absolute;
+        left: 160px;
+        width: 55px;
+        height: 55px;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+     .done-4{
+        top: 671px;
+        position: absolute;
+        left: 160px;
+        width: 55px;
+        height: 55px;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+     .text-wrapper-2{
+        position: absolute;
+        top: 455px;
+        left: 231px;
+        font-family: "Elms Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+     .text-wrapper-3{
+        position: absolute;
+        top: 530px;
+        left: 231px;
+        font-family: "Elms Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+     .text-wrapper-4{
+        position: absolute;
+        top: 605px;
+        left: 231px;
+        font-family: "Elms Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+     .text-wrapper-5{
+        position: absolute;
+        top: 680px;
+        left: 231px;
+        font-family: "Elms Sans-Regular", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        font-size: 32px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+     .rectangle{
+        position: absolute;
+        top: 886px;
+        right: 190px;
+        width: 325px;
+        height: 97px;
+        background-color: #b00303;
+        border-radius: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #ffffff;
+        font-family: "Roboto Flex", Helvetica, sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+    }
+  
+
+</style>
+</head>
+<body>
+    
+    <div class="text-wrapper">LOOXMAX AI</div>
+    <div class="div">Scanning Your Face...</div>
+    <img class="done" src="images/Done.png"/>
+    <img class="done-2" src="images/Done.png"/>
+    <img class="done-3" src="images/Done.png"/>
+    <img class="done-4" src="images/Done.png"/>
+    <div class="text-wrapper-2">Analyzing Facial Features</div>
+    <div class="text-wrapper-3">Evaluating Symmetry And Skin</div>
+    <div class="text-wrapper-4">Eye Alingmnet Detection</div>
+    <div class="text-wrapper-5" >Assessing Overall Look</div>
+    <button class="rectangle" onclick="resultpage()">
+        SHOW RESULT
+    </button>
+    
+    <div class="circle"></div>
+</body>
+</html>
