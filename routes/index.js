@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var userModel = require("./users");
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,5 +16,8 @@ router.get('/result', function(req, res, next) {
 router.get('/week', function(req, res, next) {
   res.render('week', { title: 'Express' });
 });
+
+
+
 
 module.exports = router;

@@ -16,18 +16,25 @@
         background-image: url("images/background3.jpeg");
         
     }
-    .circle{
-        width: 420px;
-        height: 420px;
-        position: absolute;
-        right: 150px;
-        top: 45%;
-        border-radius: 50%;
-        background: #efefef;
-        border: 2px solid #7dBa9a;
-        box-shadow: inset 0 0 20px rgba(0,0, 0, 0.080);
-        
+    .circle {
+    width: 420px;
+    height: 420px;
+    position: absolute;
+    right: 150px;
+    top: 45%;
+    border-radius: 50%;
+    overflow: hidden; /* IMPORTANT */
+    background: #efefef;
+    border: 2px solid #7dBa9a;
     }
+
+    #camera {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* fills circle properly */
+    }
+            
+        
      .text-wrapper{
         position: absolute;
         top: 242px;
@@ -167,6 +174,8 @@
         SHOW RESULT
     </button>
     
-    <div class="circle"></div>
+    <div class="circle">
+        <video id="camera" autoplay playsinline></video>
+    </div>
 </body>
 </html>
