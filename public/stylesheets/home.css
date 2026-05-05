@@ -1,0 +1,301 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000000;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Exo 2-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Exo 2-Bold";
+  src: local("Exo 2-Bold");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Roboto Flex-Bold", "weight": "700", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Roboto Flex-Bold";
+  src: local("Roboto Flex-Bold");
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Kosugi-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Kosugi-Regular";
+  src: local("Kosugi-Regular");
+}
+.desktop {
+  
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+}
+
+.desktop .chatgpt-image-apr {
+  left: 0;
+  width: 786px;
+  position: absolute;
+  top: 0;
+  height: 330px;
+  object-fit: cover;
+}
+
+.desktop .img {
+  left: 734px;
+  width: 706px;
+  position: absolute;
+  top: 0;
+  height: 330px;
+  object-fit: cover;
+}
+
+.desktop .chatgpt-image-apr-2 {
+  position: absolute;
+  top: 0;
+  left: 865px;
+  width: 562px;
+  height: 330px;
+  object-fit: cover;
+}
+
+.desktop .THIS-ISN-t-FILTERS {
+  position: absolute;
+  top: 21px;
+  left: 47px;
+  font-family: "Exo 2-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .AI-that-analysis {
+  position: absolute;
+  top: 165px;
+  left: 47px;
+  font-family: "Roboto Flex-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .rectangle {
+  top: 243px;
+  left: 47px;
+  width: 160px;
+  background-color: #e33d3d;
+  position: absolute;
+  height: 56px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+ .text-wrapper {
+  background: transparent;
+  color: white;
+  border: none;
+  position: absolute;
+  top: 258px;
+  left: 61px;
+  font-family: "Roboto Flex-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 19px;
+  letter-spacing: 0;
+  line-height: normal;
+   
+  
+}
+
+.desktop .div {
+  top: 242px;
+  left: 243px;
+  width: 182px;
+  border: 1px solid;
+  border-color: #ffffff;
+  position: absolute;
+  height: 56px;
+  border-radius: 10px;
+}
+
+.desktop .text-wrapper-2 {
+  position: absolute;
+  top: 258px;
+  left: 258px;
+  font-family: "Roboto Flex-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--colors-backgrounds-grouped-secondary);
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.desktop .chatgpt-image-apr-3 {
+  top: 330px;
+  height: 350px;
+  position: absolute;
+  left: 0;
+  width: 1440px;
+  object-fit: cover;
+}
+
+.desktop .chatgpt-image-apr-4 {
+  top: 680px;
+  height: 344px;
+  position: absolute;
+  left: 0;
+  width: 1440px;
+  object-fit: cover;
+}
+
+.desktop .p {
+  position: absolute;
+  top: 330px;
+  left: 47px;
+  width: 700px;
+  
+    background: transparent;
+    color: white;
+    border: none;
+   
+    
+    font-family: "Roboto Flex-Bold", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.desktop .chatgpt-image-apr-5 {
+  position: absolute;
+  top: 442px;
+  left: 129px;
+  width: 251px;
+  height: 223px;
+  aspect-ratio: 1.12;
+  object-fit: cover;
+}
+
+.desktop .chatgpt-image-apr-6 {
+  position: absolute;
+  top: 442px;
+  left: 622px;
+  width: 223px;
+  height: 223px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.desktop .chatgpt-image-apr-7 {
+  position: absolute;
+  top: 442px;
+  left: 1087px;
+  width: 223px;
+  height: 223px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.desktop .chatgpt-image-apr-8 {
+  position: absolute;
+  top: 729px;
+  left: 47px;
+  width: 154px;
+  height: 252px;
+  object-fit: cover;
+}
+
+.desktop .generated-image {
+  position: absolute;
+  top: 744px;
+  left: 754px;
+  width: 262px;
+  height: 223px;
+  aspect-ratio: 1.17;
+  object-fit: cover;
+}
+
+.desktop .diet {
+  position: absolute;
+  top: 743px;
+  left: 1133px;
+  width: 259px;
+  height: 223px;
+  aspect-ratio: 1.16;
+  object-fit: cover;
+}
+
+.desktop .skincare {
+  position: absolute;
+  top: 744px;
+  left: 369px;
+  width: 268px;
+  height: 223px;
+  aspect-ratio: 1.2;
+  object-fit: cover;
+}
+:root {
+  --colors-backgrounds-grouped-secondary: rgba(255, 255, 255, 1);
+}
+
+/*
+
+To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
+
+<body data-colors-mode="light">
+    <!-- the rest of your content -->
+</body>
+
+You can apply the theme on any DOM node, not just the `body`
+
+*/
+
+[data-colors-mode="light"] {
+  --colors-backgrounds-grouped-secondary: rgba(255, 255, 255, 1);
+}
+
+[data-colors-mode="dark"] {
+  --colors-backgrounds-grouped-secondary: rgba(28, 28, 30, 1);
+}
+
+[data-colors-mode="IC-light"] {
+  --colors-backgrounds-grouped-secondary: rgba(255, 255, 255, 1);
+}
+
+[data-colors-mode="IC-dark"] {
+  --colors-backgrounds-grouped-secondary: rgba(36, 36, 38, 1);
+}
+
+.rectangle:hover{
+  background-color: #8c3636;
+
+}
+.rectangle:focus{
+  outline: 2px solid white;
+  
+}
+

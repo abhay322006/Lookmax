@@ -3,24 +3,32 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// Sessions store karenge mere data ko server side par ya mongo db mein ->
 var expressSession = require("express-session");
+
+//passport authentication mein help karta hai->
 var passport = require("passport");
 
+//dusri files mein jaaouga yha se ->
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// view engine setup , ejs files route hoti hai isse
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+// data repeat ho raha ho toh save na hojaye baar baar issi liye ye karte hai ->
 app.use(expressSession({
   resave:false,
   saveUninitialized: false,
   secret : "looks dekho"
 }));
 
+
+//passport bna , session ka data authenticate hua and safe raha ki user ek hi aa raha hai
 app.use(passport.initialize());
 app.use(passport.session());
 passport.serializeUser(usersRouter.serializeUser());

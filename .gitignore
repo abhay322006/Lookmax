@@ -1,0 +1,2 @@
+install these npm modules everytime u clone library ->
+npm i express express-generator sessions express-sessions mongoose passport passport-local-mongoose passport-local ejs cookie-parser morgan 
