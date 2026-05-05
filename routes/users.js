@@ -1,11 +1,28 @@
 var mongoose = require("mongoose");
+var plm = require("passport-local-mongoose").default;
 
-mongoose.connect("mongodb://127.0.0.1/27017/Looksmaxxdb");
+mongoose.connect("mongodb://127.0.0.1:27017/Looksmaxxdb");
 
-var userSchema = mongoose.Schema({
-  
-  
-});
+function createUserSchema() {
+  return mongoose.Schema({
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    username : {
+        type : String,
+        required : true,
+        unique : true
+    },
+    password : {
+        type : String
+    }
+  });
+}
 
-module.exports = mongoose.model("userModel",userSchema)
+const userSchema = createUserSchema();
 
+userSchema.plugin(plm);
+
+module.exports = mongoose.model("userModel", userSchema);
