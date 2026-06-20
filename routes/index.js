@@ -2,42 +2,40 @@ var express = require('express');
 var router = express.Router();
 var userModel = require("./users");
 
-//passport and passport-local import hua 
 var passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
-//passport ko locally bnaya and usmein mongodb ka database add hua ->
 passport.use(new LocalStrategy(userModel.authenticate()));
 
-//isLoggedIn jha bhi aaya hai woh page without login kiye nhi khulega ye middleware hai ->
-//isse hi authentication kehte hai 
+// LOGIN PAGE
 router.get('/', function(req, res) {
   res.render('login');
 });
 
+// HOME PAGE
 router.get('/home', isloggedIn, function(req, res) {
   res.render('index');
 });
 
-router.get('/scan', isloggedIn, function(req, res, next) {
-  res.render('scan', { title: 'Express' });
-});
-router.get('/result', isloggedIn, function(req, res, next) {
-  res.render('shownresult', { title: 'Express' });
-});
-router.get('/week', isloggedIn, function(req, res, next) {
-  res.render('week', { title: 'Express' });
+// OTHER PAGES
+router.get('/scan', isloggedIn, function(req, res) {
+  res.render('scan');
 });
 
-//  REGISTER karne ka route yha se user ka likha data fetch hua ->
+router.get('/result', isloggedIn, function(req, res) {
+  res.render('shownresult');
+});
+
+router.get('/week', isloggedIn, function(req, res) {
+  res.render('week');
+});
+
+// REGISTER
 router.post('/register', function(req, res) {
   var newUser = new userModel({
     username: req.body.username,
     email: req.body.email
   });
-
-  // password secure hogya and next page chala jayega user 
-  //  if pass not matches wapas home aajayega
 
   userModel.register(newUser, req.body.password)
     .then(function(user) {
@@ -46,33 +44,51 @@ router.post('/register', function(req, res) {
       });
     })
     .catch(function(err) {
-      console.log(err);
+      console.log("REGISTER ERROR:", err);
       res.redirect('/');
     });
 });
 
-//middleware hai ye use it everytime before next page->
-function isloggedIn(req,res,next){
-  if(req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/");
-}
+// LOGIN
+router.post('/login', function(req, res, next) {
+  passport.authenticate("local", function(err, user, info) {
+    if (err) {
+      console.log("LOGIN ERROR:", err);
+      return next(err);
+    }
 
-// first page se next tabhi jaa sakte hai agar authentication sahi se hua warna wapas 
-router.post("/login",
-  passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/"
-  })
-);
+    if (!user) {
+      console.log("LOGIN FAILED");
+      return res.redirect('/');
+    }
 
-// LOGOUT page
+    req.logIn(user, function(err) {
+      if (err) {
+        console.log("REQ.LOGIN ERROR:", err);
+        return next(err);
+      }
+
+      console.log("LOGIN SUCCESS:", user.username);
+      return res.redirect('/home');
+    });
+  })(req, res, next);
+});
+
+// LOGOUT
 router.get('/logout', function(req, res, next) {
   req.logout(function(err) {
     if (err) return next(err);
     res.redirect('/');
   });
 });
+
+// MIDDLEWARE
+function isloggedIn(req, res, next) {
+  console.log("AUTH CHECK:", req.isAuthenticated());
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+}
 
 module.exports = router;
