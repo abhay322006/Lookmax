@@ -769,11 +769,19 @@ g('loginForm').addEventListener('submit', async function(e) {
   g('spinner').style.display = 'none';
 
   /* success */
-  const overlay = g('successOverlay');
-  g('successSub').textContent = `Authenticated as ${em}`;
-  overlay.classList.add('show');
-  setTimeout(() => { g('scanFill').style.width = '100%'; }, 120);
-});
+  /* success */
+const overlay = g('successOverlay');
+g('successSub').textContent = `Authenticated as ${em}`;
+overlay.classList.add('show');
+
+setTimeout(() => {
+  g('scanFill').style.width = '100%';
+}, 120);
+
+/* redirect to main project page */
+setTimeout(() => {
+  window.location.href = "/index.ejs";   // ya /home.html jo tera main page ho
+}, 2500);
 </script>
 </body>
 </html>
